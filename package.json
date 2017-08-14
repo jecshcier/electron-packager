@@ -1,0 +1,13 @@
+{
+  "name": "epackager",
+  "version": "0.0.1",
+  "description": "A small chatting application",
+  "scripts": {
+    "start": "node package.js"
+  },
+  "keywords": [],
+  "author": "Shayne C",
+  "dependencies": {
+    "electron-packager": "^8.7.2"
+  }
+}
