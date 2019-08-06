@@ -21,7 +21,11 @@ packager({
 		'icon': './icons/logo.ico',
 		'asar': true
 	}).then((appPaths) => { /* … */
-		return fs.copy(path.join(__dirname, `../cherry2/app`), `${appPaths}/cherry2.app/Contents/Resources/app`)
+		if(process.platform === 'darwin'){
+			return fs.copy(path.join(__dirname, `../cherry2/app`), `${appPaths}/cherry2.app/Contents/Resources/app`)
+		}else if(process.platform === 'win32'){
+			return fs.copy(path.join(__dirname, `../cherry2/app`), `${appPaths}/resources/app`)
+		}
 	})
 	.then(() => {
 		console.log('ok')
